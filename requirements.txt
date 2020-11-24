@@ -3,11 +3,11 @@ blis==0.7.3
 brotlipy==0.7.0
 catalogue==1.0.0
 certifi==2020.6.20
-cffi @ file:///C:/ci/cffi_1605538151928/work
-chardet @ file:///C:/ci/chardet_1605285153095/work
+cffi
+chardet
 click==7.1.2
-colorama @ file:///tmp/build/80754af9/colorama_1603211150991/work
-cryptography @ file:///C:/ci/cryptography_1605544548630/work
+colorama
+cryptography
 cycler==0.10.0
 cymem==2.0.4
 dataclasses==0.7
@@ -18,12 +18,12 @@ fastprogress==1.0.0
 Flask==1.1.2
 future==0.18.2
 gunicorn==20.0.4
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+idna
 importlib-metadata==3.1.0
-ipython @ file:///C:/ci/ipython_1593446240034/work
+ipython
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
-jedi @ file:///C:/ci/jedi_1596472773465/work
+jedi
 Jinja2==2.11.2
 joblib==0.17.0
 kiwisolver==1.3.1
@@ -39,22 +39,22 @@ packaging==20.4
 pandas==1.1.4
 parso==0.7.0
 pickleshare==0.7.5
-Pillow @ file:///C:/ci/pillow_1603822370986/work
+Pillow
 plac==1.1.3
 preshed==3.0.4
-prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1602688806899/work
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
-Pygments @ file:///tmp/build/80754af9/pygments_1600458456400/work
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1605545627475/work
+prompt-toolkit
+pycparser
+Pygments
+pyOpenSSL
 pyparsing==2.4.7
-PySocks @ file:///C:/ci/pysocks_1605305839978/work
+PySocks
 python-dateutil==2.8.1
 pytz==2020.4
 PyYAML==5.3.1
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
+requests
 scikit-learn==0.23.2
 scipy==1.5.4
-six @ file:///C:/ci/six_1605187303045/work
+six
 sklearn==0.0
 spacy==2.3.3
 srsly==1.0.4
@@ -65,11 +65,11 @@ torchaudio==0.7.0
 torchvision==0.8.1
 tqdm==4.53.0
 traitlets==4.3.3
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
-urllib3 @ file:///tmp/build/80754af9/urllib3_1603305693037/work
+typing-extensions
+urllib3
 wasabi==0.8.0
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+wcwidth
 Werkzeug==1.0.1
-win-inet-pton @ file:///C:/ci/win_inet_pton_1605306197271/work
+win-inet-pton
 wincertstore==0.2
 zipp==3.4.0
