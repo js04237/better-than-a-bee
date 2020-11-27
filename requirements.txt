@@ -15,7 +15,7 @@ fastprogress==1.0.0
 Flask==1.1.2
 future==0.18.2
 idna==2.10
-ipython==7.19.0
+ipython
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
 jedi==0.17.2
