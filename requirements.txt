@@ -53,7 +53,7 @@ threadpoolctl==2.1.0
 torch==1.7.0
 torchvision==0.8.1
 tqdm==4.53.0
-traitlets==5.0.5
+traitlets
 typing-extensions
 urllib3==1.26.2
 wasabi==0.8.0
