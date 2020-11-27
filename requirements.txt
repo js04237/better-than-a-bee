@@ -50,8 +50,8 @@ spacy==2.3.4
 srsly==1.0.4
 thinc==7.4.3
 threadpoolctl==2.1.0
-torch==1.7.0
-torchvision==0.8.1
+torch==1.7.0+cpu
+torchvision==0.8.1+cpu
 tqdm==4.53.0
 traitlets
 typing-extensions
