@@ -1,4 +1,4 @@
--f https://download.pytorch.org/whl/torch_stable.html
+-f https://download.pytorch.org/whl/cpu/torch-1.7.0%2Bcpu-cp38-cp38-linux_x86_64.whl
 backcall==0.2.0
 blis==0.7.3
 catalogue==1.0.0
@@ -51,7 +51,6 @@ spacy==2.3.4
 srsly==1.0.4
 thinc==7.4.3
 threadpoolctl==2.1.0
-torchvision==0.8.1
 tqdm==4.53.0
 traitlets
 typing-extensions
