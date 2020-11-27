@@ -1,4 +1,6 @@
 -f https://download.pytorch.org/whl/cpu/torch-1.7.0%2Bcpu-cp38-cp38-linux_x86_64.whl
+torch==1.7.0+cpu
+torchvision==0.8.1+cpu
 backcall==0.2.0
 blis==0.7.3
 catalogue==1.0.0
