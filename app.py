@@ -99,7 +99,7 @@ def img_predict():
             img.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
     
             # Load the model
-            learn.load('model')
+            # learn.load('model')
                     
             # Run the image through the model
             pred_class, pred_idx, outputs = learn.predict(img)
