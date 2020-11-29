@@ -33,6 +33,7 @@ data = ImageDataLoaders.from_df(
     item_tfms=Resize(resize_size),device='cpu', num_workers=0,
 )
 
+learn = cnn_learner(data, arch=resnet34, path='models/model.pth', metrics=[error_rate, accuracy])
 # learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
 
 # Function to check file extension (imgrecognition)
@@ -56,7 +57,7 @@ def img_predict():
     # Run on Submit button click
     if flask.request.method == 'POST':
 
-        learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
+        # learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
 
         # This works, but is clumsy - can't figure out a better way to do it
         # Without this the file caches and doesn't update on reload
