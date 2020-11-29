@@ -1,9 +1,9 @@
 id,path,is_bee,is_wasp,is_otherinsect,is_other,photo_quality,is_validation,is_final_validation,label
-1,bee1\10007154554_026417cfd0_n.jpg,1,0,0,0,1,0,0,bee
-2,bee1\10007154554_026417cfd0_n.jpg,0,1,0,0,1,0,0,wasp
-3,bee1\10007154554_026417cfd0_n.jpg,0,0,1,0,1,0,0,insect
-4,bee1\10007154554_026417cfd0_n.jpg,0,0,0,1,1,0,0,other
-5,bee1\10007154554_026417cfd0_n.jpg,1,0,0,0,1,0,0,bee
-6,bee1\10007154554_026417cfd0_n.jpg,0,1,0,0,1,0,0,wasp
-7,bee1\10007154554_026417cfd0_n.jpg,0,0,1,0,1,0,0,insect
-8,bee1\10007154554_026417cfd0_n.jpg,0,0,0,1,1,0,0,other
+1,10007154554_026417cfd0_n.jpg,1,0,0,0,1,0,0,bee
+2,10007154554_026417cfd0_n.jpg,0,1,0,0,1,0,0,wasp
+3,10007154554_026417cfd0_n.jpg,0,0,1,0,1,0,0,insect
+4,10007154554_026417cfd0_n.jpg,0,0,0,1,1,0,0,other
+5,10007154554_026417cfd0_n.jpg,1,0,0,0,1,0,0,bee
+6,10007154554_026417cfd0_n.jpg,0,1,0,0,1,0,0,wasp
+7,10007154554_026417cfd0_n.jpg,0,0,1,0,1,0,0,insect
+8,10007154554_026417cfd0_n.jpg,0,0,0,1,1,0,0,other
