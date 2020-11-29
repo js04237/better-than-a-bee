@@ -3,6 +3,7 @@ import joblib
 import os
 import glob
 from fastai.vision.all import *
+import pandas as pd
 
 app = flask.Flask(__name__, template_folder='templates')
 
@@ -10,6 +11,29 @@ app = flask.Flask(__name__, template_folder='templates')
 app.config["IMAGE_UPLOADS"] = "static/img"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "JFIF"]
 app.config["MAX_IMAGE_FILESIZE"] = 250000
+
+# Setup for model import
+bs = 64 # Batch size
+resize_size = 180 # for training, resize all the images to a square of this size
+training_subsample = 0.8 # for development, use a small fraction of the entire dataset rater than full dataset
+df_labels = pd.read_csv('labels.csv')
+df_labels=df_labels.set_index('id')
+df_labels = df_labels.sample(frac=training_subsample, axis=0)
+data = ImageDataLoaders.from_df(
+    df = df_labels,
+    # path = ('C:/Users/JBStogner/GitHub/Project-3/kaggle_bee_vs_wasp'),
+    valid_pct=0.2,
+    seed = 42,
+    fn_col='path',
+    folder=None,
+    label_col='label',
+    bs=bs,
+    shuffle_train=True,
+    batch_tfms=aug_transforms(),
+    item_tfms=Resize(resize_size),device='cpu', num_workers=0,
+)
+
+learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
 
 # Function to check file extension (imgrecognition)
 def allowed_image(filename):
@@ -72,7 +96,7 @@ def img_predict():
             img.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
     
             # Load the model
-            learn = load_learner('model/export.pkl')
+            learn.load('model')
                     
             # Run the image through the model
             pred_class, pred_idx, outputs = learn.predict(img)
