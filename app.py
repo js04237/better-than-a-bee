@@ -34,7 +34,7 @@ data = ImageDataLoaders.from_df(
 )
 
 # learn = cnn_learner(data, arch=models.resnet34, path='model.pth', metrics=[error_rate, accuracy])
-learn = cnn_learner(data, models.rgit stesnet34, metrics=[error_rate, accuracy])
+learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
 learn.load('model.pth')
 
 # Function to check file extension (imgrecognition)
