@@ -5,7 +5,7 @@ import glob
 from fastai.vision.all import *
 import pandas as pd
 
-app = flask.Flask(__name__, template_folder='templates')
+app = flask.Flask(__name__)#, template_folder='templates')
 
 # Config settings
 app.config["IMAGE_UPLOADS"] = "static/img"
