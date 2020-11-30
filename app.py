@@ -5,23 +5,23 @@ import glob
 from fastai.vision.all import *
 import pandas as pd
 
-app = flask.Flask(__name__)#, template_folder='templates')
+app = flask.Flask(__name__)
 
 # Config settings
 app.config["IMAGE_UPLOADS"] = "static/img"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["JPEG", "JPG", "PNG", "JFIF"]
 app.config["MAX_IMAGE_FILESIZE"] = 250000
 
-# # Setup for model import
-bs = 64 # Batch size
-resize_size = 180 # for training, resize all the images to a square of this size
-training_subsample = 0.8 # for development, use a small fraction of the entire dataset rater than full dataset
-df_labels = pd.read_csv('labels.csv')
+# Setup for model import
+# Obligatory for importing a non-serialized model
+bs = 64
+resize_size = 180
+training_subsample = 0.8
+df_labels = pd.read_csv('bee1/labels.csv')
 df_labels=df_labels.set_index('id')
 df_labels = df_labels.sample(frac=training_subsample, axis=0)
 data = ImageDataLoaders.from_df(
     df = df_labels,
-    # path = ('C:/Users/JBStogner/GitHub/Project-3/kaggle_bee_vs_wasp'),
     valid_pct=0.2,
     seed = 42,
     fn_col='path',
@@ -33,10 +33,9 @@ data = ImageDataLoaders.from_df(
     item_tfms=Resize(resize_size),device='cpu', num_workers=0,
 )
 
-# learn = cnn_learner(data, arch=models.resnet34, path='model.pth', metrics=[error_rate, accuracy])
+# imports the model from fastai, unfortunately haven't been able to figure out how to mange this locally without impacting the trained model
 learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
 learn.load('model')
-# learn = load_learner('models/model')
 
 # Function to check file extension (imgrecognition)
 def allowed_image(filename):
@@ -59,10 +58,8 @@ def img_predict():
     # Run on Submit button click
     if flask.request.method == 'POST':
 
-        # learn = cnn_learner(data, models.resnet34, metrics=[error_rate, accuracy])
-
         # This works, but is clumsy - can't figure out a better way to do it
-        # Without this the file caches and doesn't update on reload
+        # Without this code, the displayed image caches and doesn't update when subsequent images are loaded
         # Identify the file to be deleted
         del_file = glob.glob(app.config["IMAGE_UPLOADS"] + '/UPLOAD_PIC*')
         # Convert to a string and remove the root
@@ -99,9 +96,6 @@ def img_predict():
 
             # Save the image
             img.save(os.path.join(app.config["IMAGE_UPLOADS"], filename))
-    
-            # Load the model
-            # learn.load('model')
                     
             # Run the image through the model
             pred_class, pred_idx, outputs = learn.predict(img)
